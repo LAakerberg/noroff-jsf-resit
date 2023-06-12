@@ -1,3 +1,4 @@
 /* import of components CSS */
 
-@import '/src/assets/css/Components//Navigation.css';
+@import '/src/assets/css/Components/Navigation.css';
+@import '/src/assets/css/Components/Spinner.css';
