@@ -23,6 +23,7 @@
     "react/prop-types": "off"
   },
   "globals": {
-    "require": true
+    "require": true,
+    "process": true
   }
 }
