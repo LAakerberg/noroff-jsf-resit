@@ -1,7 +1,46 @@
-export default function App() {
+import { Header } from './layout/Header';
+import { Footer } from './layout/Footer';
+import { Routes, Route, Outlet } from 'react-router';
+import { Home } from './pages/Home';
+import { Pokemon } from './pages/Pokemon';
+import { Contact } from './pages/Contact';
+
+export function Main() {
+  return (
+    <main>
+      <div>
+        <h1 className="text-4xl">Main</h1>
+      </div>
+      <div>
+        <Outlet />
+      </div>
+    </main>
+  );
+}
+
+export function Layout() {
   return (
     <>
-      <h1 className="text-4xl border border-red-700">Hello</h1>
+      <Header />
+      <Main />
+      <Footer />
     </>
+  );
+}
+
+function RouteNotFound() {
+  return <div>Page not found</div>;
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/pokemon" element={<Pokemon />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<RouteNotFound />} />
+      </Route>
+    </Routes>
   );
 }
