@@ -1,3 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind base; */
+@import 'tailwindcss/base';
+@import '/src/assets/css/Base/base.css';
+/* @tailwind components; */
+@import 'tailwindcss/components';
+@import '/src/assets/css/Components/components.css';
+/* @tailwind utilities; */
+@import 'tailwindcss/utilities';
+@import '/src/assets/css/Utilities/utilities.css';
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 0px auto;
+}
+
+@layer base {
+  header,
+  main,
+  footer {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0px auto;
+    padding: 0px;
+  }
+}
+
+@layer base {
+  body {
+    background-size: 10%;
+    background: linear-gradient(
+      to bottom,
+      rgb(223, 0, 0) 0px,
+      rgb(143, 0, 0) 220px,
+      rgb(65, 0, 0) 220px,
+      rgb(0, 0, 0) 245px,
+      rgb(92, 92, 92) 255px,
+      rgb(230, 230, 230) 270px,
+      rgb(231, 231, 231) 270px,
+      rgb(255, 255, 255) 100%
+    );
+  }
+}
+
+@media screen and (min-width: 700px) {
+  header,
+  main,
+  footer {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  header,
+  main,
+  footer {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  header,
+  main,
+  footer {
+    width: 1500px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  header,
+  main,
+  footer {
+    width: 2000px;
+  }
+}
