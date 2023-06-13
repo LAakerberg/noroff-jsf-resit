@@ -11,7 +11,7 @@ export function Main() {
       <div>
         <h1 className="text-4xl">Main</h1>
       </div>
-      <div>
+      <div className="py-2">
         <Outlet />
       </div>
     </main>
