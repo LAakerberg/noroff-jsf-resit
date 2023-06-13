@@ -1,4 +1,4 @@
-import { Spinner } from '../Spinner';
+import { Spinner } from '../Pokemon/Spinner';
 
 /**
  * Component for displaying a message with an optional spinner.
