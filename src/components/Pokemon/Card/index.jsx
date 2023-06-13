@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { filterPokemon, paginatePokemon } from '../Filtered';
+import { Link } from 'react-router-dom';
 
-function PokemonCard({ pokemon }) {
+export function PokemonCard({ pokemon }) {
   return (
     <div key={pokemon.id} className="w-60">
       <div>
@@ -20,9 +22,12 @@ function PokemonCard({ pokemon }) {
       </div>
       <div className="flex flex-col">
         <div className="m-auto">
-          <button className="bg-red-300 p-2 rounded-lg outline outline-1 outline-red-900 uppercase">
-            View more
-          </button>
+          <Link
+            to={`/pokemon/details/${pokemon.id}`}
+            className="bg-red-300 p-2 rounded-lg outline outline-1 outline-red-900 uppercase"
+          >
+            View more{' '}
+          </Link>
         </div>
       </div>
     </div>
@@ -32,7 +37,6 @@ function PokemonCard({ pokemon }) {
 export function Cards({ value }) {
   const pokemon = value;
 
-  // Filter options and default filter
   const filterOptions = [
     'All',
     'Colorless',
@@ -50,43 +54,35 @@ export function Cards({ value }) {
   const defaultFilter = 'All';
   const pageSize = 12;
 
-  // State for the selected filter, current page, and search query
   const [selectedFilter, setSelectedFilter] = useState(defaultFilter);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Reset search and filter to default values
   const handleResetFilter = () => {
     setSelectedFilter(defaultFilter);
     setSearchQuery('');
   };
 
-  // Watch for changes in searchQuery and reset currentPage to 1
   useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery]);
 
-  // Filter Pokémon cards based on the selected type and search query
-  const filteredPokemon = pokemon.data?.filter((poke) => {
-    const matchesFilter =
-      selectedFilter === 'All' ? true : poke.types.includes(selectedFilter);
-    const matchesSearch =
-      poke.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      poke.types.includes(searchQuery);
-    return matchesFilter && matchesSearch;
-  });
-
-  // Calculate the start and end index of the current page
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-
-  // Get the Pokémon cards for the current page
-  const paginatedPokemon = filteredPokemon?.slice(startIndex, endIndex);
-
-  // Calculate the total number of pages
+  const filteredPokemon = filterPokemon(
+    pokemon.data,
+    selectedFilter,
+    searchQuery
+  );
+  const paginatedPokemon = paginatePokemon(
+    filteredPokemon,
+    currentPage,
+    pageSize
+  );
   const totalPages = Math.ceil(filteredPokemon?.length / pageSize);
 
-  // Display a status message when there are no search results
+  /*   const filteredPokemon = filterPokemon();
+  const paginatedPokemon = paginatePokemon(filteredPokemon);
+  const totalPages = Math.ceil(filteredPokemon?.length / pageSize); */
+
   const renderStatusMessage = () => {
     if (searchQuery && filteredPokemon && filteredPokemon.length === 0) {
       return <p>No matching Pokémon found.</p>;
