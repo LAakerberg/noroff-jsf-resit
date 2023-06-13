@@ -4,6 +4,7 @@ import { Routes, Route, Outlet } from 'react-router';
 import { Home } from './pages/Home';
 import { Pokemon } from './pages/Pokemon';
 import { Contact } from './pages/Contact';
+import { PokemonDetails } from './pages/PokemonDetails';
 
 export function Main() {
   return (
@@ -11,7 +12,7 @@ export function Main() {
       <div>
         <h1 className="text-4xl">Main</h1>
       </div>
-      <div>
+      <div className="py-2">
         <Outlet />
       </div>
     </main>
@@ -38,6 +39,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/pokemon" element={<Pokemon />} />
+        <Route path="/pokemon/details/:id" element={<PokemonDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<RouteNotFound />} />
       </Route>
