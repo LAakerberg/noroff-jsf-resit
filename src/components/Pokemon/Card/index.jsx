@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 export function PokemonCard({ pokemon }) {
   return (
-    <div key={pokemon.id} className="w-60">
+    <div
+      key={pokemon.id}
+      className="w-64 rounded-lg outline outline-1 p-2 bg-orange-200 hover:bg-orange-300 hover:outline-2 hover:z-10 hover:-translate-y-2 shadow-md shadow-gray-600/60 hover:shadow-lg hover:shadow-gray-700/100 transition-all"
+    >
       <div>
         <h4 className="font-bold">{pokemon.name}</h4>
       </div>
@@ -127,7 +130,7 @@ export function Cards({ value }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4 pt-4">
+      <div className=" grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl::grid-cols-5 4xl:grid-cols-6 pt-4 gap-6">
         {paginatedPokemon?.map((poke) => (
           <PokemonCard key={poke.id} pokemon={poke} />
         ))}
