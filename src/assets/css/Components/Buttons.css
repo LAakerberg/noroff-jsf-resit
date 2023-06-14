@@ -15,17 +15,18 @@
 .primary {
   background-color: rgb(255, 222, 34);
   outline: 4px solid rgb(255, 223, 117);
-
   &:hover {
     background-color: rgb(247, 171, 31);
   }
 }
 
 .secondary {
-  background-color: rgb(196, 134, 0);
-
+  background-color: rgb(253, 147, 77);
+  outline: 4px solid rgb(255, 223, 117);
   &:hover {
-    background-color: rgb(211, 162, 0);
+    color: #f0f0f0;
+    outline: 4px solid rgb(243, 142, 74);
+    background-color: rgb(212, 115, 49);
   }
 }
 
