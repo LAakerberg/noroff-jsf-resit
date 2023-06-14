@@ -95,10 +95,11 @@ export function Cards({ value }) {
 
   return (
     <div className="">
-      <div className="flex flex-cols m-auto w-4/5 bg-yellow-500 p-4 border border-black">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row m-auto w-fit bg-orange-300 p-4 rounded-xl border border-black">
+        <div className="flex-initial">
+          <div>Find your next pokemon card</div>
           <input
-            className="w-64 p-1 rounded-md outline outline-2 outline-blue-500"
+            className="w-64 p-1 rounded-md outline outline-2 outline-blue-500 focus:outline-4"
             type="search"
             name="pokemon"
             id=""
@@ -107,21 +108,25 @@ export function Cards({ value }) {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <div className="flex-1">
-          <select
-            value={selectedFilter}
-            onChange={(e) => setSelectedFilter(e.target.value)}
-          >
-            {filterOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+        <div className="flex-initial justify-center items-center px-4">
+          <div className="m-auto">
+            <div>Sort by type:</div>
+            <select
+              className="h-8 rounded-md border-2 border-blue-500"
+              value={selectedFilter}
+              onChange={(e) => setSelectedFilter(e.target.value)}
+            >
+              {filterOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div>
+        <div className="flex-initial m-auto">
           <button
-            className="bg-yellow-300 p-2 rounded-lg outline outline-1 outline-red-900 uppercase"
+            className="button_style secondary"
             type="reset"
             onClick={handleResetFilter}
           >
