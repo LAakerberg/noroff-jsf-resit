@@ -21,10 +21,10 @@ export function PokemonCard({ pokemon }) {
         </div>
       </div>
       <div className="flex flex-col">
-        <div className="m-auto">
+        <div className="py-4 m-auto">
           <Link
             to={`/pokemon/details/${pokemon.id}`}
-            className="bg-red-300 p-2 rounded-lg outline outline-1 outline-red-900 uppercase"
+            className="button_style primary"
           >
             View more{' '}
           </Link>
