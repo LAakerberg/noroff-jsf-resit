@@ -8,7 +8,7 @@ import { PokemonDetails } from './pages/PokemonDetails';
 
 export function Main() {
   return (
-    <main>
+    <main className="bg-white">
       <div>
         <h1 className="text-4xl">Main</h1>
       </div>
