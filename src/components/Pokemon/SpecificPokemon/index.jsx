@@ -17,14 +17,14 @@ export function SpecificPokemon({ details }) {
 
   return (
     <>
-      <div className="flex flex-col w-full border">
-        <div className="flex flex-rows border border-black">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-col sm:flex-row p-2 border-b-2 border-black">
           <div className="flex-initial">
             <h2>{pokemon?.name}</h2>
           </div>
-          <div className="flex-initial m-auto pl-2">
+          <div className="flex-initial m-auto">
             {pokemon?.level && (
-              <p className="text-lg">
+              <p className="text-lg sm:pl-4">
                 LV. <span className="font-bold text-3xl">{pokemon.level}</span>
               </p>
             )}
@@ -35,8 +35,8 @@ export function SpecificPokemon({ details }) {
             </p>
           </div>
         </div>
-        <div className="flex flex-rows">
-          <div className="flex-initial w-72 border border-black">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex-initial w-72 hover:w-full mobile:hover:w-11/12 lg:hover:w-96 hover:z-20 transition-all p-2 cursor-pointer m-auto mt-0">
             <div>
               <img
                 src={pokemon?.images.large}
@@ -45,9 +45,9 @@ export function SpecificPokemon({ details }) {
               />
             </div>
           </div>
-          <div className="flex-1 border border-black" id="dynamic-bg">
+          <div className="flex-1 p-2" id="dynamic-bg">
             <div className="flex flex-col m-auto">
-              <div className="flex flex-row bg-gradient-to-b from-slate-300 via-slate-200 to-slate-400">
+              <div className="flex flex-row bg-gradient-to-b from-slate-300 via-slate-200 to-slate-400 rounded-3xl">
                 <div className="flex-1 m-auto justify-center text-center">
                   <h3>Abilities</h3>
                 </div>
@@ -61,11 +61,11 @@ export function SpecificPokemon({ details }) {
                   </button>
                 </div>
               </div>
-              <div className="flex flex-col">
-                <div>
+              <div className="flex flex-col p-2">
+                <div className="">
                   {abilitiesOpen && (
                     <>
-                      <div className="bg-slate-100">
+                      <div className="bg-slate-100 rounded-lg">
                         <div>
                           {pokemon.abilities && pokemon.abilities.length > 0 ? (
                             pokemon.abilities.map((pokeAbilities, index) => (
@@ -90,7 +90,7 @@ export function SpecificPokemon({ details }) {
                   )}
                 </div>
               </div>
-              <div className="flex flex-row bg-gradient-to-b from-slate-300 via-slate-200 to-slate-400 mt-2">
+              <div className="flex flex-row bg-gradient-to-b from-slate-300 via-slate-200 to-slate-400 mt-2 rounded-3xl">
                 <div className="flex-1 m-auto justify-center text-center">
                   <h3>Attacks</h3>
                 </div>
@@ -104,11 +104,11 @@ export function SpecificPokemon({ details }) {
                   </button>
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col p-2">
                 <div>
                   {attacksOpen && (
                     <>
-                      <div className="bg-slate-100">
+                      <div className="bg-slate-100 rounded-lg">
                         <div>
                           {pokemon.attacks && pokemon.attacks.length > 0 ? (
                             pokemon.attacks.map((pokeAttacks, index) => (
@@ -121,6 +121,15 @@ export function SpecificPokemon({ details }) {
                                   </div>
                                 </div>
                                 <p>{pokeAttacks.text}</p>
+                                <div className="flex justify-center w-full m-auto">
+                                  {pokeAttacks.damage && (
+                                    <div className="bg-orange-400 h-10 w-10 rounded-full flex items-center justify-center">
+                                      <p className="text-center font-bold">
+                                        {pokeAttacks.damage}
+                                      </p>
+                                    </div>
+                                  )}
+                                </div>
                               </div>
                             ))
                           ) : (
