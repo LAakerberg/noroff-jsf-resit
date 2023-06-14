@@ -147,22 +147,32 @@ export function Cards({ value }) {
         </div>
       )}
 
-      <div className="flex justify-center mt-4">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 mr-2"
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage(currentPage - 1)}
-        >
-          Previous
-        </button>
-        <span>{currentPage}</span> of <span>{totalPages}</span>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 ml-2"
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage(currentPage + 1)}
-        >
-          Next
-        </button>
+      <div className="flex justify-center mt-5">
+        <div className="flex-initial">
+          {' '}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 mr-2"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+          >
+            Previous
+          </button>
+        </div>
+        <div className="flex-initial">
+          <div className="">
+            {currentPage} of {totalPages}
+          </div>
+        </div>
+        <div className="flex-initial">
+          {' '}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 ml-2"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage(currentPage + 1)}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
