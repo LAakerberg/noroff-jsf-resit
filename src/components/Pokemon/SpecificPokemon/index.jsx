@@ -18,7 +18,7 @@ export function SpecificPokemon({ details }) {
   return (
     <>
       <div className="flex flex-col w-full">
-        <div className="flex flex-col sm:flex-row p-2 border-b-2 border-black">
+        <div className="flex flex-col sm:flex-row p-2 m-2 bg-slate-200 rounded-xl">
           <div className="flex-initial">
             <h2>{pokemon?.name}</h2>
           </div>
@@ -36,7 +36,7 @@ export function SpecificPokemon({ details }) {
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="flex-initial w-72 hover:w-full mobile:hover:w-11/12 lg:hover:w-96 hover:z-20 transition-all p-2 cursor-pointer m-auto mt-0">
+          <div className="flex-initial w-72 lg:w-96 hover:w-full md:hover:w-1/2 lg:hover:w-1/2 xl:hover:w-2/5 mobile:hover:w-11/12 2xl:hover:w-1/4 hover:z-20 transition-all p-2 cursor-pointer m-auto mt-0">
             <div>
               <img
                 src={pokemon?.images.large}
@@ -72,7 +72,7 @@ export function SpecificPokemon({ details }) {
                               <div key={index} className="p-1">
                                 <div className="p-1">
                                   <div className="text-center">
-                                    <p className="font-bold">
+                                    <p className="text-lg font-bold">
                                       {pokeAbilities.type} -{' '}
                                       {pokeAbilities.name}
                                     </p>
@@ -82,7 +82,7 @@ export function SpecificPokemon({ details }) {
                               </div>
                             ))
                           ) : (
-                            <p>No abilities found.</p>
+                            <p className="p-2">No abilities found.</p>
                           )}
                         </div>
                       </div>
@@ -115,7 +115,7 @@ export function SpecificPokemon({ details }) {
                               <div key={index} className="p-1">
                                 <div className="m-1">
                                   <div className="text-center">
-                                    <p className="font-bold">
+                                    <p className="text-lg font-bold">
                                       {pokeAttacks.name}
                                     </p>
                                   </div>
@@ -123,9 +123,9 @@ export function SpecificPokemon({ details }) {
                                 <p>{pokeAttacks.text}</p>
                                 <div className="flex justify-center w-full m-auto">
                                   {pokeAttacks.damage && (
-                                    <div className="bg-orange-400 h-10 w-10 rounded-full flex items-center justify-center">
+                                    <div className="bg-orange-400 h-10 w-28 rounded-full flex items-center justify-center m-2">
                                       <p className="text-center font-bold">
-                                        {pokeAttacks.damage}
+                                        Damage: {pokeAttacks.damage}
                                       </p>
                                     </div>
                                   )}
@@ -133,7 +133,7 @@ export function SpecificPokemon({ details }) {
                               </div>
                             ))
                           ) : (
-                            <p>No attacks found.</p>
+                            <p className="p-2">No attacks found.</p>
                           )}
                         </div>
                       </div>
@@ -141,10 +141,65 @@ export function SpecificPokemon({ details }) {
                   )}
                 </div>
               </div>
-              <div className="flex flex-row">
-                <div className="flex-1">Weaknesses</div>
-                <div className="flex-1">Resistance</div>
-                <div className="flex-1">Retreat cost</div>
+
+              <div className="flex flex-col md:flex-row w-full m-auto outline outline-1 rounded-lg">
+                <div className="flex-1 bg-slate-100 p-2">
+                  <div>
+                    <p className="text-lg font-bold">Weaknesses</p>
+                  </div>
+                  {pokemon?.weaknesses && pokemon?.weaknesses.length > 0 ? (
+                    <div>
+                      {pokemon?.weaknesses.map((pokeWeaknesses, index) => (
+                        <div key={index}>
+                          <div>
+                            {pokeWeaknesses?.type} {pokeWeaknesses?.value}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>No weaknesses</p>
+                  )}
+                </div>
+                <div className="flex-1 bg-red-100 p-2">
+                  <div>
+                    <p className="text-lg font-bold">Resistance</p>
+                  </div>
+                  {pokemon?.resistances && pokemon?.resistances.length > 0 ? (
+                    <div>
+                      {pokemon?.resistances.map((pokeResistances, index) => (
+                        <div key={index}>
+                          <div>
+                            {pokeResistances?.type} {pokeResistances?.value}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>No resistance</p>
+                  )}
+                </div>
+                <div className="flex-1 bg-yellow-100 p-2">
+                  <div>
+                    <p className="text-lg font-bold">Retreat</p>
+                  </div>
+                  {pokemon?.retreatCost && pokemon.retreatCost.length > 0 ? (
+                    <div>
+                      {Object.entries(
+                        pokemon.retreatCost.reduce((count, retreatCost) => {
+                          count[retreatCost] = (count[retreatCost] || 0) + 1;
+                          return count;
+                        }, {})
+                      ).map(([retreatType, count]) => (
+                        <div key={retreatType}>
+                          <div>{`${retreatType} x${count}`}</div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>No retreat cost</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
