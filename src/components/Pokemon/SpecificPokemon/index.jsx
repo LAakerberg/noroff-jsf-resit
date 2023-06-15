@@ -123,7 +123,7 @@ export function SpecificPokemon({ details }) {
                                 <p>{pokeAttacks.text}</p>
                                 <div className="flex justify-center w-full m-auto">
                                   {pokeAttacks.damage && (
-                                    <div className="bg-orange-400 h-10 w-28 rounded-full flex items-center justify-center m-2">
+                                    <div className="bg-orange-400 h-10 w-32 rounded-full flex items-center justify-center m-2">
                                       <p className="text-center font-bold">
                                         Damage: {pokeAttacks.damage}
                                       </p>
