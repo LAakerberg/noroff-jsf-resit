@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <footer>
-      <h1 className="text-4xl border border-red-700">Footer</h1>
+    <footer className="h-20 bg-slate-500">
+      <h1 className="text-4xl">Footer</h1>
     </footer>
   );
 }

@@ -1,0 +1,52 @@
+/* Global style's for buttons */
+
+.button_style {
+  width: 110px;
+  padding: 6px 10px;
+  border: 1px solid black;
+  border-radius: 5px 15px;
+  text-transform: uppercase;
+  transition: 0.4s;
+  &:hover {
+    transition: 0.4s;
+  }
+}
+
+.primary {
+  background-color: rgb(255, 222, 34);
+  outline: 4px solid rgb(255, 223, 117);
+  &:hover {
+    background-color: rgb(247, 171, 31);
+  }
+}
+
+.secondary {
+  background-color: rgb(253, 147, 77);
+  outline: 4px solid rgb(255, 223, 117);
+  &:hover {
+    color: #f0f0f0;
+    outline: 4px solid rgb(243, 142, 74);
+    background-color: rgb(212, 115, 49);
+  }
+}
+
+.arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.arrow-button:hover {
+  transition: 0.4s ease-in-out;
+  background-color: #8f8f8f;
+}
+
+.arrow-button.open {
+  transform: rotate(180deg);
+}

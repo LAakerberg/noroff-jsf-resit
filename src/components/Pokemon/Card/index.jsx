@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 export function PokemonCard({ pokemon }) {
   return (
-    <div key={pokemon.id} className="w-60">
+    <div
+      key={pokemon.id}
+      className="w-64 rounded-lg outline outline-1 p-2 bg-orange-200 hover:bg-orange-300 hover:outline-2 hover:z-10 hover:-translate-y-2 shadow-md shadow-gray-600/60 hover:shadow-lg hover:shadow-gray-700/100 transition-all"
+    >
       <div>
         <h4 className="font-bold">{pokemon.name}</h4>
       </div>
@@ -21,10 +24,10 @@ export function PokemonCard({ pokemon }) {
         </div>
       </div>
       <div className="flex flex-col">
-        <div className="m-auto">
+        <div className="py-4 m-auto">
           <Link
             to={`/pokemon/details/${pokemon.id}`}
-            className="bg-red-300 p-2 rounded-lg outline outline-1 outline-red-900 uppercase"
+            className="button_style primary"
           >
             View more{' '}
           </Link>
@@ -92,10 +95,11 @@ export function Cards({ value }) {
 
   return (
     <div className="">
-      <div className="flex flex-cols m-auto w-4/5 bg-yellow-500 p-4 border border-black">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row m-auto w-fit bg-orange-300 p-4 rounded-xl border border-black">
+        <div className="flex-initial">
+          <div>Find your next pokemon card</div>
           <input
-            className="w-64 p-1 rounded-md outline outline-2 outline-blue-500"
+            className="w-64 p-1 rounded-md outline outline-2 outline-blue-500 focus:outline-4"
             type="search"
             name="pokemon"
             id=""
@@ -104,21 +108,25 @@ export function Cards({ value }) {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <div className="flex-1">
-          <select
-            value={selectedFilter}
-            onChange={(e) => setSelectedFilter(e.target.value)}
-          >
-            {filterOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+        <div className="flex-initial justify-center items-center px-4">
+          <div className="m-auto">
+            <div>Sort by type:</div>
+            <select
+              className="h-8 rounded-md border-2 border-blue-500"
+              value={selectedFilter}
+              onChange={(e) => setSelectedFilter(e.target.value)}
+            >
+              {filterOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div>
+        <div className="flex-initial m-auto">
           <button
-            className="bg-yellow-300 p-2 rounded-lg outline outline-1 outline-red-900 uppercase"
+            className="button_style secondary"
             type="reset"
             onClick={handleResetFilter}
           >
@@ -127,7 +135,7 @@ export function Cards({ value }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4 pt-4">
+      <div className=" grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl::grid-cols-5 4xl:grid-cols-6 pt-4 gap-6">
         {paginatedPokemon?.map((poke) => (
           <PokemonCard key={poke.id} pokemon={poke} />
         ))}
@@ -139,22 +147,32 @@ export function Cards({ value }) {
         </div>
       )}
 
-      <div className="flex justify-center mt-4">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 mr-2"
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage(currentPage - 1)}
-        >
-          Previous
-        </button>
-        <span>{currentPage}</span> of <span>{totalPages}</span>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 ml-2"
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage(currentPage + 1)}
-        >
-          Next
-        </button>
+      <div className="flex justify-center mt-5">
+        <div className="flex-initial">
+          {' '}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 mr-2"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+          >
+            Previous
+          </button>
+        </div>
+        <div className="flex-initial">
+          <div className="">
+            {currentPage} of {totalPages}
+          </div>
+        </div>
+        <div className="flex-initial">
+          {' '}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 ml-2"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage(currentPage + 1)}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );

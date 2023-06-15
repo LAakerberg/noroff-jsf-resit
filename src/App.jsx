@@ -8,10 +8,7 @@ import { PokemonDetails } from './pages/PokemonDetails';
 
 export function Main() {
   return (
-    <main>
-      <div>
-        <h1 className="text-4xl">Main</h1>
-      </div>
+    <main className="bg-white">
       <div className="py-2">
         <Outlet />
       </div>
