@@ -1,0 +1,14 @@
+.touched {
+  border-color: green;
+}
+
+.error.touched {
+  border-color: red;
+}
+
+/* Additional styling for blue outline on untouched fields */
+input:not(.touched),
+select:not(.touched),
+textarea:not(.touched) {
+  border-color: blue;
+}
