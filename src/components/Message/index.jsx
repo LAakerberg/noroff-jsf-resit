@@ -10,7 +10,9 @@ import { Spinner } from './Spinner/Spinner';
  */
 export const Message = ({ type, text }) => {
   return (
-    <div className={`message ${type}`}>
+    <div
+      className={`flex w-fit m-auto shadow-lg drop-shadow-2xl border border-black rounded-lg message ${type}`}
+    >
       <div className="flex-1">
         <p className="m-2">{text}</p>
       </div>
