@@ -7,7 +7,7 @@ export function SearchFilter({
   filterOptions,
 }) {
   return (
-    <div className="flex flex-col sm:flex-row m-auto w-fit bg-orange-300 p-4 my-6 rounded-xl border border-black">
+    <div className="flex flex-col sm:flex-row m-auto w-fit bg-orange-300 shadow-lg shadow-black/50 p-4 my-6 rounded-xl border border-black">
       <div className="flex-initial px-1">
         <div>Find your next pokemon card</div>
         <input
