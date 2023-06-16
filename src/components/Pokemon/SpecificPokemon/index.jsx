@@ -18,21 +18,36 @@ export function SpecificPokemon({ details }) {
   return (
     <>
       <div className="flex flex-col w-full">
-        <div className="flex flex-col sm:flex-row p-2 m-2 bg-slate-200 rounded-xl">
+        <div className="flex flex-col sm:flex-row p-2 m-2 bg-slate-200 border border-slate-400 rounded-xl">
           <div className="flex-initial">
-            <h2>{pokemon?.name}</h2>
+            <div>
+              <div>
+                <h2>{pokemon?.name}</h2>
+              </div>
+              <div>
+                <p className="italic underline underline-offset-2">
+                  {pokemon?.types}
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="flex-initial m-auto">
-            {pokemon?.level && (
-              <p className="text-lg sm:pl-4">
-                LV. <span className="font-bold text-3xl">{pokemon.level}</span>
-              </p>
-            )}
-          </div>
+          <div className="flex-initial m-auto"></div>
           <div className="flex-1 m-auto justify-end text-right pr-2">
-            <p className="text-lg">
-              HP. <span className="font-bold text-3xl">{pokemon?.hp}</span>
-            </p>
+            <div>
+              {' '}
+              <p className="text-lg">
+                HP. <span className="font-bold text-3xl">{pokemon?.hp}</span>
+              </p>
+            </div>
+            <div>
+              {' '}
+              {pokemon?.level && (
+                <p className="text-lg sm:pl-4">
+                  LV.{' '}
+                  <span className="font-bold text-3xl">{pokemon.level}</span>
+                </p>
+              )}
+            </div>
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
@@ -41,7 +56,7 @@ export function SpecificPokemon({ details }) {
               <img
                 src={pokemon?.images.large}
                 alt="Image's of the pokemon"
-                className="w-full"
+                className="w-full rounded-xl"
               />
             </div>
           </div>
@@ -65,7 +80,7 @@ export function SpecificPokemon({ details }) {
                 <div className="">
                   {abilitiesOpen && (
                     <>
-                      <div className="bg-slate-100 rounded-lg">
+                      <div className="bg-slate-100 border border-slate-400 rounded-lg">
                         <div>
                           {pokemon.abilities && pokemon.abilities.length > 0 ? (
                             pokemon.abilities.map((pokeAbilities, index) => (
@@ -108,7 +123,7 @@ export function SpecificPokemon({ details }) {
                 <div>
                   {attacksOpen && (
                     <>
-                      <div className="bg-slate-100 rounded-lg">
+                      <div className="bg-slate-100 border border-slate-400 rounded-lg">
                         <div>
                           {pokemon.attacks && pokemon.attacks.length > 0 ? (
                             pokemon.attacks.map((pokeAttacks, index) => (
@@ -142,7 +157,7 @@ export function SpecificPokemon({ details }) {
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row w-full m-auto outline outline-1 rounded-lg">
+              <div className="flex flex-col md:flex-row w-full m-auto outline outline-1 rounded-lg mt-6">
                 <div className="flex-1 bg-slate-100 p-2">
                   <div>
                     <p className="text-lg font-bold">Weaknesses</p>
