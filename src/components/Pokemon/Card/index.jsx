@@ -28,7 +28,7 @@ export function PokemonCard({ pokemon }) {
         <div className="py-4 m-auto">
           <Link
             to={`/pokemon/details/${pokemon.id}`}
-            className="button_style primary"
+            className="button_style primary shadow-lg shadow-orange-400"
           >
             View more{' '}
           </Link>
