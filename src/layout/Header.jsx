@@ -1,5 +1,4 @@
 import { Nav } from './Navigation/Nav';
-/* import headerImg from '../assets/img/headerImage.jpg'; */
 import videoBg2 from '../assets/vid/pokemon_-_111535_Original.mp4';
 
 export function Header() {
@@ -9,12 +8,6 @@ export function Header() {
         <div className="flex-1 px-2 z-20">
           <Nav />
         </div>
-        {/* <div className="flex-1 m-auto h-14">
-          <div className="m-auto flex w-full text-center justify-center">
-            <h1 className="text-white uppercase">Pokémon Moon</h1>
-          </div>
-        </div>
-        <div className="hidden lg:block flex-initial m-auto h-14 w-52"></div> */}
       </div>
       <div className="h-72">
         <div className="w-full h-72 object-cover bg-gradient-to-b from-red-700 from-20% to-transparent to-60%">
@@ -26,11 +19,6 @@ export function Header() {
             playsInline
             src={videoBg2}
           />
-          {/*           <img
-            src={headerImg}
-            alt="header image"
-            className="image w-full h-80 object-cover"
-          /> */}
         </div>
       </div>
     </header>
