@@ -26,11 +26,6 @@ export function Nav() {
               Home
             </Link>
           </li>
-          {/* <li>
-            <Link to="/pokemon" className="links" onClick={closeMenu}>
-              Pokemon
-            </Link>
-          </li> */}
           <li>
             <Link to="/contact" className="links" onClick={closeMenu}>
               Contact
