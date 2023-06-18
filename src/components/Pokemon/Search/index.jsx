@@ -11,7 +11,7 @@ export function SearchFilter({
       <div className="flex-initial px-1">
         <div className="pb-1">Find your next pokémon card:</div>
         <input
-          className="w-64 p-1 rounded-md outline outline-2 outline-slate-500 focus:outline-4"
+          className="w-full p-1 rounded-md outline outline-2 outline-slate-500 focus:outline-4"
           type="search"
           name="pokemon"
           id=""
