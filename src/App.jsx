@@ -9,7 +9,7 @@ import { PokemonDetails } from './pages/PokemonDetails';
 export function Main() {
   return (
     <main className="bg-white/50 backdrop-blur-md">
-      <div className="py-2">
+      <div className="p-2">
         <Outlet />
       </div>
     </main>
