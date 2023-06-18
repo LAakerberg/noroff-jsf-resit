@@ -7,7 +7,11 @@ export function FetchPokemon() {
   const { data, isLoading, isError } = useApiCall(API_BASE);
 
   if (isLoading) {
-    return <Message type="loading" text="Loading pokémon cards" />; // Display loading message while venue data is being fetched
+    return (
+      <div className="flex m-auto mt-32">
+        <Message type="loading" text="Loading pokémon cards" />
+      </div>
+    ); // Display loading message while venue data is being fetched
   }
 
   if (isError) {

@@ -9,9 +9,9 @@ export function SearchFilter({
   return (
     <div className="flex flex-col sm:flex-row m-auto w-fit bg-orange-300 shadow-lg shadow-black/50 p-4 my-6 rounded-xl border border-black">
       <div className="flex-initial px-1">
-        <div className="pb-1">Find your next pokemon card</div>
+        <div className="pb-1">Find your next pokémon card:</div>
         <input
-          className="w-64 p-1 rounded-md outline outline-2 outline-orange-500 focus:outline-4"
+          className="w-64 p-1 rounded-md outline outline-2 outline-slate-500 focus:outline-4"
           type="search"
           name="pokemon"
           id=""
@@ -24,7 +24,7 @@ export function SearchFilter({
         <div className="m-auto px-1">
           <div className="pb-1">Sort by type:</div>
           <select
-            className="h-8 rounded-md outline outline-2 outline-orange-500 focus:outline-4"
+            className="h-8 rounded-md outline outline-2 outline-slate-500 focus:outline-4"
             value={selectedFilter}
             onChange={(e) => setSelectedFilter(e.target.value)}
           >

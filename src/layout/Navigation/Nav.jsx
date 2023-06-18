@@ -6,13 +6,19 @@ export function Nav() {
       <div className="flex h-14">
         <ul className="m-auto flex w-full">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="links">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/pokemon">Pokemon</Link>
+            <Link to="/pokemon" className="links">
+              Pokemon
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="links">
+              Contact
+            </Link>
           </li>
         </ul>
       </div>

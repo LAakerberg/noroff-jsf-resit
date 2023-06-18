@@ -11,7 +11,7 @@ export function Header() {
         </div>
         <div className="flex-1 m-auto h-14">
           <div className="m-auto flex w-full text-center justify-center">
-            <h1 className="text-white">Pokemon Moon</h1>
+            <h1 className="text-white uppercase">Pokémon Moon</h1>
           </div>
         </div>
         <div className="hidden lg:block flex-initial m-auto h-14 w-52"></div>
