@@ -47,114 +47,112 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact">
-      <div className="flex flex-col w-full tablet:w-96 p-8 bg-slate-100 border border-slate-400 rounded-2xl">
-        <div className="flex flex-col py-2">
-          <div>
-            <label>First name</label>
-          </div>
-          <div className="py-1">
-            {' '}
-            <input
-              className=""
-              placeholder="Enter your name..."
-              {...register('name')}
-            />
-            <p
-              className={
-                errors.name
-                  ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
-                  : 'hidden'
-              }
-            >
-              {errors.name?.message}
-            </p>
-          </div>
+      {/* Render the success message component only if formSubmitted is true */}
+      {formSubmitted ? (
+        <div>
+          <Message
+            type="success"
+            text="Form was submitted, you will be contacted within 24 hours."
+          />
         </div>
-
-        <div className="flex flex-col py-2">
-          <div>
-            <label>Phone number</label>
-          </div>
-          <div>
-            {' '}
-            <input
-              {...register('phone')}
-              className=""
-              placeholder="Enter your number..."
-            />
-            <p
-              className={
-                errors.phone
-                  ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
-                  : 'hidden'
-              }
-            >
-              {errors.phone?.message}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col py-2">
-          <div>
-            <label>Choose a subject:</label>
-          </div>
-          <div>
-            <select
-              id="subject"
-              name="subject"
-              {...register('subject')}
-              className=""
-            >
-              <option value="general">General</option>
-              <option value="compliment">Compliment</option>
-              <option value="complaint">Complaint</option>
-              <option value="enquiry">Enquiry</option>
-            </select>
-            <p
-              className={
-                errors.subject
-                  ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
-                  : 'hidden'
-              }
-            >
-              {errors.subject?.message}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col py-2">
-          <div>
-            <label>Description</label>
-          </div>
-          <div>
-            <textarea
-              {...register('description')}
-              className=""
-              placeholder="Describe your problem here..."
-            ></textarea>
-            <p
-              className={
-                errors.description
-                  ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
-                  : 'hidden'
-              }
-            >
-              {errors.description?.message}
-            </p>
-          </div>
-        </div>
-
-        {/* Render the success message component only if formSubmitted is true */}
-        {formSubmitted ? (
-          <div>
+      ) : (
+        <div className="flex flex-col w-full tablet:w-96 p-8 bg-slate-100 border border-slate-400 rounded-2xl">
+          <div className="flex flex-col py-2">
             <div>
-              <Message
-                type="success"
-                text="Form was submitted, you will be contacted within 24 hours."
+              <label>First name</label>
+            </div>
+            <div className="py-1">
+              {' '}
+              <input
+                className=""
+                placeholder="Enter your name..."
+                {...register('name')}
               />
+              <p
+                className={
+                  errors.name
+                    ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
+                    : 'hidden'
+                }
+              >
+                {errors.name?.message}
+              </p>
             </div>
           </div>
-        ) : (
+
+          <div className="flex flex-col py-2">
+            <div>
+              <label>Phone number</label>
+            </div>
+            <div>
+              {' '}
+              <input
+                {...register('phone')}
+                className=""
+                placeholder="Enter your number..."
+              />
+              <p
+                className={
+                  errors.phone
+                    ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
+                    : 'hidden'
+                }
+              >
+                {errors.phone?.message}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col py-2">
+            <div>
+              <label>Choose a subject:</label>
+            </div>
+            <div>
+              <select
+                id="subject"
+                name="subject"
+                {...register('subject')}
+                className=""
+              >
+                <option value="general">General</option>
+                <option value="compliment">Compliment</option>
+                <option value="complaint">Complaint</option>
+                <option value="enquiry">Enquiry</option>
+              </select>
+              <p
+                className={
+                  errors.subject
+                    ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
+                    : 'hidden'
+                }
+              >
+                {errors.subject?.message}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col py-2">
+            <div>
+              <label>Description</label>
+            </div>
+            <div>
+              <textarea
+                {...register('description')}
+                className=""
+                placeholder="Describe your problem here..."
+              ></textarea>
+              <p
+                className={
+                  errors.description
+                    ? 'p-1 m-2 bg-red-300 border border-red-500 text-red-950'
+                    : 'hidden'
+                }
+              >
+                {errors.description?.message}
+              </p>
+            </div>
+          </div>
+
           <div>
             <div className="py-4">
               <button type="submit" className="button_style primary">
@@ -162,8 +160,8 @@ export function ContactForm() {
               </button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </form>
   );
 }
