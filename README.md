@@ -2,7 +2,7 @@
 
 ### Noroff-jsf-rest
 
-![onedesignScreenshotHighV2](https://github.com/LAakerberg/Portfolio-2/assets/44141432/ad761f96-a5e5-4cda-9c73-400e4bc185db)
+![pokemonMoon-screen](https://github.com/LAakerberg/noroff-jsf-resit/assets/44141432/38366b26-6ba5-4f5f-b01d-ce9268fb87ed)
 
 ### Description
 
