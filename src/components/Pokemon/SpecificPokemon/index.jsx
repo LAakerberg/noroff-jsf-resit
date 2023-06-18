@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TiArrowSortedDown } from 'react-icons/ti';
 
 export function SpecificPokemon({ details }) {
@@ -6,6 +6,10 @@ export function SpecificPokemon({ details }) {
 
   const [abilitiesOpen, setAbilitiesOpen] = useState(false);
   const [attacksOpen, setAttacksOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = `Pokémon | ${pokemon?.name}`;
+  }, []);
 
   const toggleAbilities = () => {
     setAbilitiesOpen(!abilitiesOpen);

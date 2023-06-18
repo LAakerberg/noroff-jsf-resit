@@ -1,6 +1,11 @@
 import { ContactForm } from '../../hooks/contactHook';
+import { useEffect } from 'react';
 
 export function Contact() {
+  useEffect(() => {
+    document.title = 'Pokémon Moon | Contact us';
+  }, []);
+
   return (
     <>
       <h3 className="p-2">Contact us</h3>
