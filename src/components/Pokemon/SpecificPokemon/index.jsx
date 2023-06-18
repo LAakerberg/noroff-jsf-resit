@@ -55,7 +55,7 @@ export function SpecificPokemon({ details }) {
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="flex-initial w-72 lg:w-96 hover:w-full md:hover:w-1/2 lg:hover:w-1/2 xl:hover:w-2/5 mobile:hover:w-11/12 2xl:hover:w-1/4 hover:z-20 transition-all p-2 cursor-pointer m-auto mt-0">
+          <div className="flex-initial w-40 mobile:w-72 lg:w-96 hover:w-full md:hover:w-1/2 lg:hover:w-1/2 xl:hover:w-2/5 mobile:hover:w-11/12 2xl:hover:w-1/4 hover:z-20 transition-all p-2 cursor-pointer m-auto mt-0">
             <div>
               <img
                 src={pokemon?.images.large}
