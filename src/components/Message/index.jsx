@@ -11,13 +11,13 @@ import { Spinner } from './Spinner/Spinner';
 export const Message = ({ type, text }) => {
   return (
     <div
-      className={`flex w-fit m-auto shadow-lg drop-shadow-2xl border border-black rounded-lg message ${type}`}
+      className={`flex w-fit m-auto shadow-lg drop-shadow-2xl rounded-md message ${type}`}
     >
       <div className="flex-1">
-        <p className="m-2">{text}</p>
+        <p className="m-2 break-words text-center">{text}</p>
       </div>
       <div className="flex-initial p-1">
-        {type !== 'error' && type !== 'booked' && <Spinner />}
+        {type !== 'error' && type !== 'success' && <Spinner />}
       </div>
     </div>
   );
