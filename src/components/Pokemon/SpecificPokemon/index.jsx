@@ -21,7 +21,7 @@ export function SpecificPokemon({ details }) {
 
   return (
     <>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full fade-in">
         <div className="flex flex-col sm:flex-row p-2 m-2 bg-slate-200 border border-slate-400 rounded-xl">
           <div className="flex-initial">
             <div>

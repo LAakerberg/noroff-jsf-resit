@@ -8,7 +8,7 @@ export function Pokemon() {
 
   return (
     <>
-      <div>
+      <div className="fade-in">
         <FetchPokemon />
       </div>
     </>

@@ -20,7 +20,7 @@ export function FetchPokemon() {
 
   return (
     <>
-      <div className="">
+      <div className="fade-in">
         <Cards value={data} />
       </div>
     </>

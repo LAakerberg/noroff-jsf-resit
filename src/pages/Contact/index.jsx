@@ -9,7 +9,7 @@ export function Contact() {
   return (
     <>
       <h3 className="p-2">Contact us</h3>
-      <div className="flex flex-col md:flex-row m-auto justify-center gap-8">
+      <div className="flex flex-col md:flex-row m-auto justify-center gap-8 fade-in">
         <div className="flex-initial">
           <div className="w-fit max-w-lg bg-slate-200 rounded-lg border border-red-950 p-2">
             <p className="p-1">
