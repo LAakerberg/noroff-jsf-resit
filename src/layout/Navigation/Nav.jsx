@@ -17,7 +17,9 @@ export function Nav() {
   return (
     <nav>
       <div className="">
-        <h1 className="text-white uppercase">Pokémon Moon</h1>
+        <Link to="/" className="" onClick={closeMenu}>
+          <h1 className="text-white uppercase">Pokémon Moon</h1>
+        </Link>
       </div>
       <div className={`menu ${isMenuOpen ? 'open' : 'close'}`}>
         <ul>
