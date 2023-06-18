@@ -5,16 +5,16 @@ import videoBg2 from '../assets/vid/pokemon_-_111535_Original.mp4';
 export function Header() {
   return (
     <header className="relative">
-      <div className="absolute z-10 w-full flex h-14 bg-gradient-to-b from-red-700/90 via-red-800/90 to-red-900/90 backdrop-blur-sm">
-        <div className="flex-initial z-20">
+      <div className="absolute z-10 w-full flex bg-gradient-to-b from-red-700/90 via-red-800/90 to-red-900/90 backdrop-blur-sm">
+        <div className="flex-1 px-2 z-20">
           <Nav />
         </div>
-        <div className="flex-1 m-auto h-14">
+        {/* <div className="flex-1 m-auto h-14">
           <div className="m-auto flex w-full text-center justify-center">
             <h1 className="text-white uppercase">Pokémon Moon</h1>
           </div>
         </div>
-        <div className="hidden lg:block flex-initial m-auto h-14 w-52"></div>
+        <div className="hidden lg:block flex-initial m-auto h-14 w-52"></div> */}
       </div>
       <div className="h-72">
         <div className="w-full h-72 object-cover bg-gradient-to-b from-red-700 from-20% to-transparent to-60%">
