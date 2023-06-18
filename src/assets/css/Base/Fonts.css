@@ -1,0 +1,29 @@
+/* Global Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tilt+Prism&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+h1 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+p {
+  line-height: 1.625rem;
+  padding: 2px;
+  font-family: 'Cabin', sans-serif;
+}
