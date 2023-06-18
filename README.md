@@ -39,6 +39,17 @@ npm install
 npm run dev
 ```
 
+### ENV Setup
+
+1. Create an account att Pokémon TCG API
+   [Pokémon TCG API](https://dev.pokemontcg.io/)
+
+2. Create an .env file
+
+3. Add the specific key you got from pokémon TCG.
+
+Tip: Check the .env.example for correct setup.
+
 # Netlify Production page:
 
 ## Badges
@@ -55,3 +66,9 @@ Contact me on my social media
 
 [![My socialMedia](https://skillicons.dev/icons?i=github)](https://github.com/LAakerberg)
 [![My socialMedia](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/linus-%C3%A5kerberg-4126891b1/)
+
+# Acknowledgments
+
+My video in the header is from Pixabay.
+
+Video by <a href="https://pixabay.com/users/flamisurpx-24183425/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=111535">Flami de YouTube</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=111535">Pixabay</a>
