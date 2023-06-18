@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { FetchPokemon } from '../../components/Pokemon/FetchPokemon';
 
 export function Home() {
   useEffect(() => {
@@ -7,7 +8,10 @@ export function Home() {
 
   return (
     <>
-      <h3>Home</h3>
+      {/* <h3>Home</h3> */}
+      <div>
+        <FetchPokemon />
+      </div>
     </>
   );
 }
