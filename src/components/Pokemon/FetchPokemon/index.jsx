@@ -8,7 +8,7 @@ export function FetchPokemon() {
 
   if (isLoading) {
     return (
-      <div className="flex m-auto mt-32">
+      <div className="flex m-auto">
         <Message type="loading" text="Loading pokémon cards" />
       </div>
     ); // Display loading message while venue data is being fetched
