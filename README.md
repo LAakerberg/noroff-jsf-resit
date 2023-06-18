@@ -2,7 +2,7 @@
 
 ### Noroff-jsf-rest
 
-![onedesignScreenshotHighV2](https://github.com/LAakerberg/Portfolio-2/assets/44141432/ad761f96-a5e5-4cda-9c73-400e4bc185db)
+![pokemonMoon-screen](https://github.com/LAakerberg/noroff-jsf-resit/assets/44141432/38366b26-6ba5-4f5f-b01d-ce9268fb87ed)
 
 ### Description
 
@@ -43,11 +43,11 @@ npm run dev
 
 ## Badges
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/aa346c2a-f274-4034-8704-6f7d15b17f45/deploy-status)](https://app.netlify.com/sites/calm-mochi-1fa4fd/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/72162425-3ee2-4175-9ca2-05dc9e52f4a4/deploy-status)](https://app.netlify.com/sites/superlative-meerkat-07118d/deploys)
 
 ## Live demo
 
-[Onedesign Portfolio](https://calm-mochi-1fa4fd.netlify.app/)
+[Live website](https://superlative-meerkat-07118d.netlify.app/)
 
 # Contact
 

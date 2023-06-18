@@ -27,6 +27,11 @@ const schema = yup
   })
   .required();
 
+/**
+ * Renders a contact form component.
+ *
+ * @returns {JSX.Element} The rendered contact form component.
+ */
 export function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [showForm, setShowForm] = useState(true);
@@ -39,15 +44,23 @@ export function ContactForm() {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
+  /**
+   * Handles the form submission event.
+   *
+   * @param {Object} data - The form data submitted by the user.
+   * @returns {void}
+   */
+  function onSubmit() {
     // Handle form submission here
-    console.log(data);
+
     // Assuming form submission is successful
     setShowForm(false); // Hide the form immediately
     setTimeout(() => setFormSubmitted(true), 200); // Show the success message after a delay of 500 milliseconds
   }
 
-  // Reset the formSubmitted state and show the form when component unmounts
+  /**
+   * Resets the formSubmitted state and shows the form when the component unmounts.
+   */
   useEffect(() => {
     return () => {
       setFormSubmitted(false);
@@ -70,12 +83,12 @@ export function ContactForm() {
             showForm ? 'fade-in' : 'hidden'
           }`}
         >
+          {/* Name field */}
           <div className="flex flex-col py-2">
             <div>
               <label>First name</label>
             </div>
             <div className="py-1">
-              {' '}
               <input
                 className=""
                 placeholder="Enter your name..."
@@ -93,12 +106,12 @@ export function ContactForm() {
             </div>
           </div>
 
+          {/* Phone number field */}
           <div className="flex flex-col py-2">
             <div>
               <label>Phone number</label>
             </div>
             <div>
-              {' '}
               <input
                 {...register('phone')}
                 className=""
@@ -116,6 +129,7 @@ export function ContactForm() {
             </div>
           </div>
 
+          {/* Subject field */}
           <div className="flex flex-col py-2">
             <div>
               <label>Choose a subject:</label>
@@ -144,6 +158,7 @@ export function ContactForm() {
             </div>
           </div>
 
+          {/* Description field */}
           <div className="flex flex-col py-2">
             <div>
               <label>Description</label>
@@ -166,6 +181,7 @@ export function ContactForm() {
             </div>
           </div>
 
+          {/* Submit button */}
           <div>
             <div className="py-4">
               <button type="submit" className="button_style primary">

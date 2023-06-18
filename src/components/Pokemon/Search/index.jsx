@@ -1,3 +1,14 @@
+/**
+ * SearchFilter component for filtering and searching Pokémon cards.
+ * @param {Object} props - The component props.
+ * @param {string} props.searchQuery - The current search query.
+ * @param {Function} props.setSearchQuery - The function to update the search query.
+ * @param {string} props.selectedFilter - The currently selected filter option.
+ * @param {Function} props.setSelectedFilter - The function to update the selected filter option.
+ * @param {Function} props.handleResetFilter - The function to reset the filter.
+ * @param {string[]} props.filterOptions - The available filter options.
+ * @returns {JSX.Element} The rendered SearchFilter component.
+ */
 export function SearchFilter({
   searchQuery,
   setSearchQuery,
@@ -9,7 +20,7 @@ export function SearchFilter({
   return (
     <div className="flex flex-col sm:flex-row m-auto w-fit bg-orange-300 shadow-lg shadow-black/50 p-4 my-6 rounded-xl border border-black">
       <div className="flex-initial px-1">
-        <div className="pb-1">Find your next pokémon card:</div>
+        <div className="pb-1">Find your next Pokémon card:</div>
         <input
           className="w-full p-1 rounded-md outline outline-2 outline-slate-500 focus:outline-4"
           type="search"
