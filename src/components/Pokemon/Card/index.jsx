@@ -3,6 +3,11 @@ import { filterPokemon, paginatePokemon } from '../Filtered';
 import { Link } from 'react-router-dom';
 import { SearchFilter } from '../Search';
 
+/**
+ * Represents a Pokémon card component.
+ * @param {Object} pokemon - The Pokémon object to display.
+ * @returns {JSX.Element} The rendered Pokémon card component.
+ */
 export function PokemonCard({ pokemon }) {
   return (
     <div
@@ -62,6 +67,9 @@ export function Cards({ value }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
 
+  /**
+   * Resets the filter and search query to their default values.
+   */
   const handleResetFilter = () => {
     setSelectedFilter(defaultFilter);
     setSearchQuery('');
@@ -83,10 +91,10 @@ export function Cards({ value }) {
   );
   const totalPages = Math.ceil(filteredPokemon?.length / pageSize);
 
-  /*   const filteredPokemon = filterPokemon();
-  const paginatedPokemon = paginatePokemon(filteredPokemon);
-  const totalPages = Math.ceil(filteredPokemon?.length / pageSize); */
-
+  /**
+   * Renders a status message based on the search query and filtered Pokémon.
+   * @returns {JSX.Element|null} The rendered status message or null if no message is needed.
+   */
   const renderStatusMessage = () => {
     if (searchQuery && filteredPokemon && filteredPokemon.length === 0) {
       return <p>No matching Pokémon found.</p>;
