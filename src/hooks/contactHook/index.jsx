@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Message } from '../../components/Message';
 import * as yup from 'yup';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const schema = yup
   .object({
@@ -29,6 +29,7 @@ const schema = yup
 
 export function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [showForm, setShowForm] = useState(true);
 
   const {
     register,
@@ -42,21 +43,33 @@ export function ContactForm() {
     // Handle form submission here
     console.log(data);
     // Assuming form submission is successful
-    setFormSubmitted(true);
+    setShowForm(false); // Hide the form immediately
+    setTimeout(() => setFormSubmitted(true), 200); // Show the success message after a delay of 500 milliseconds
   }
+
+  // Reset the formSubmitted state and show the form when component unmounts
+  useEffect(() => {
+    return () => {
+      setFormSubmitted(false);
+      setShowForm(true);
+    };
+  }, []);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact">
-      {/* Render the success message component only if formSubmitted is true */}
       {formSubmitted ? (
-        <div>
+        <div className="fade-in">
           <Message
             type="success"
             text="Form was submitted, you will be contacted within 24 hours."
           />
         </div>
       ) : (
-        <div className="flex flex-col w-full tablet:w-96 p-8 bg-slate-100 border border-slate-400 rounded-2xl">
+        <div
+          className={`flex flex-col w-full tablet:w-96 p-8 bg-slate-100 border border-slate-400 rounded-2xl ${
+            showForm ? 'fade-in' : 'hidden'
+          }`}
+        >
           <div className="flex flex-col py-2">
             <div>
               <label>First name</label>
