@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { TiArrowSortedDown } from 'react-icons/ti';
 
+/**
+ * Renders a component displaying specific details of a Pokémon.
+ *
+ * @param {Object} details - The details of the Pokémon.
+ * @returns {JSX.Element} The rendered specific Pokémon component.
+ */
 export function SpecificPokemon({ details }) {
   const pokemon = details.data;
 
@@ -11,17 +17,25 @@ export function SpecificPokemon({ details }) {
     document.title = `Pokémon | ${pokemon?.name}`;
   }, []);
 
+  /**
+   * Toggles the display of abilities.
+   */
   const toggleAbilities = () => {
     setAbilitiesOpen(!abilitiesOpen);
   };
 
+  /**
+   * Toggles the display of attacks.
+   */
   const toggleAttacks = () => {
     setAttacksOpen(!attacksOpen);
   };
 
   return (
     <>
+      {/* Pokémon details */}
       <div className="flex flex-col w-full fade-in">
+        {/* Pokémon name and type */}
         <div className="flex flex-col sm:flex-row p-2 m-2 bg-slate-200 border border-slate-400 rounded-xl">
           <div className="flex-initial">
             <div>
@@ -35,41 +49,47 @@ export function SpecificPokemon({ details }) {
               </div>
             </div>
           </div>
+          {/* HP and level */}
           <div className="flex-initial m-auto"></div>
           <div className="flex-1 m-auto justify-end text-right pr-2">
             <div>
-              {' '}
               <p className="text-lg">
                 HP. <span className="font-bold text-3xl">{pokemon?.hp}</span>
               </p>
             </div>
-            <div>
-              {' '}
-              {pokemon?.level && (
+            {pokemon?.level && (
+              <div>
                 <p className="text-lg sm:pl-4">
                   LV.{' '}
                   <span className="font-bold text-3xl">{pokemon.level}</span>
                 </p>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
+
+        {/* Pokémon image and abilities */}
         <div className="flex flex-col md:flex-row">
+          {/* Pokémon image */}
           <div className="flex-initial w-40 mobile:w-72 lg:w-96 hover:w-full md:hover:w-1/2 lg:hover:w-1/2 xl:hover:w-2/5 mobile:hover:w-11/12 2xl:hover:w-1/4 hover:z-20 transition-all p-2 cursor-pointer m-auto mt-0">
             <div>
               <img
                 src={pokemon?.images.large}
-                alt="Image's of the pokemon"
+                alt="Image of the pokemon"
                 className="w-full rounded-xl"
               />
             </div>
           </div>
+
+          {/* Pokémon abilities */}
           <div className="flex-1 p-2" id="dynamic-bg">
             <div className="flex flex-col m-auto">
+              {/* Abilities header */}
               <div className="flex flex-row bg-gradient-to-b from-slate-300 via-slate-200 to-slate-400 rounded-3xl">
                 <div className="flex-1 m-auto justify-center text-center">
                   <h3>Abilities</h3>
                 </div>
+                {/* Toggle abilities button */}
                 <div className="flex-initial">
                   <button
                     className={`arrow-button ${abilitiesOpen ? 'open' : ''}`}
@@ -80,6 +100,8 @@ export function SpecificPokemon({ details }) {
                   </button>
                 </div>
               </div>
+
+              {/* Abilities content */}
               <div className="flex flex-col p-2">
                 <div className="">
                   {abilitiesOpen && (
@@ -109,10 +131,13 @@ export function SpecificPokemon({ details }) {
                   )}
                 </div>
               </div>
+
+              {/* Pokémon attacks */}
               <div className="flex flex-row bg-gradient-to-b from-slate-300 via-slate-200 to-slate-400 mt-2 rounded-3xl">
                 <div className="flex-1 m-auto justify-center text-center">
                   <h3>Attacks</h3>
                 </div>
+                {/* Toggle attacks button */}
                 <div className="flex-initial">
                   <button
                     className={`arrow-button ${attacksOpen ? 'open' : ''}`}
@@ -123,6 +148,8 @@ export function SpecificPokemon({ details }) {
                   </button>
                 </div>
               </div>
+
+              {/* Attacks content */}
               <div className="flex flex-col p-2">
                 <div>
                   {attacksOpen && (
@@ -161,7 +188,9 @@ export function SpecificPokemon({ details }) {
                 </div>
               </div>
 
+              {/* Pokémon weaknesses, resistances, and retreat */}
               <div className="flex flex-col md:flex-row w-full m-auto outline outline-1 rounded-lg mt-6">
+                {/* Weaknesses */}
                 <div className="flex-1 bg-slate-100 p-2">
                   <div>
                     <p className="text-lg font-bold">Weaknesses</p>
@@ -180,6 +209,8 @@ export function SpecificPokemon({ details }) {
                     <p>No weaknesses</p>
                   )}
                 </div>
+
+                {/* Resistances */}
                 <div className="flex-1 bg-red-100 p-2">
                   <div>
                     <p className="text-lg font-bold">Resistance</p>
@@ -198,6 +229,8 @@ export function SpecificPokemon({ details }) {
                     <p>No resistance</p>
                   )}
                 </div>
+
+                {/* Retreat */}
                 <div className="flex-1 bg-yellow-100 p-2">
                   <div>
                     <p className="text-lg font-bold">Retreat</p>
